@@ -1,14 +1,16 @@
 #include <stdio.h>
 
 int main(void) {
-  int x = 0;
-  printf("Enter num between 0-255 to translate into binary.\n");
+  int num = 0;
   do {
-    scanf("%d", &x);
-    if (x > 255 || x < 0) {
-      printf("Out of range.\n");
+    printf("Enter a number between 0 - 255\n");
+    scanf("%d", &num);
+    if (num > 255) {
+      printf("Too high number.\n");
+    } else if (num < 0) {
+      printf("Too low number.\n");
     }
-  } while (x > 255 || x < 0);
-  printf("%0b\n", x);
+  } while (num < 0 || num > 255);
+  printf("Binary of %d = %b\n", num, num);
   return 0;
 }
