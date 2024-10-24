@@ -6,11 +6,12 @@ int main(void)
   printf("Enter current time.\nFormat: YYYY-MM-DD HH:mm:ss");
   char datecheck[20];
   scanf("%c", datecheck);
-  while ((datecheck == getchar()) != '\n') {
+  while ((datecheck = getchar()) != '\n') {
     if (isalpha(datecheck)) {
-      printf("%s", datecheck);
-    } else if (isspace(datecheck)) {
-      printf("\n");
+        putchar(datecheck);
+      }
+    } else if (isspace(datecheck) && !isspace(previous) && onlyonespace == 0) {
+      putchar(' ');
     }
   }
   return 0;
