@@ -1,42 +1,98 @@
-#include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int check_leapyear(int year);
+int validate_month(int month);
+int validate_day(int year, int month, int day);
+int validate_time(int hour, int minute, int second);
+int parse_datetime(const char *input, int *year, int *month, int *day,
+                   int *hour, int *minute, int *second);
 
 int main(void) {
-  int year = 4;
-  const int calendar[12][2] = {{1, 31},   // jan - 31
-                               {2, 28},   // feb - 28
-                               {3, 31},   // mar - 31
-                               {4, 30},   // apr - 30
-                               {5, 31},   // may - 31
-                               {6, 30},   // jun - 30
-                               {7, 31},   // jul - 31
-                               {8, 31},   // aug - 31
-                               {9, 30},   // sep - 30
-                               {10, 31},  // oct - 31
-                               {11, 30},  // nov - 30
-                               {12, 31}}; // dec - 31
+  char buffer[20];
+  int year, month, day, hour, minute, second;
 
-  for (int i = 0; i < 12; i++) {
-    for (int ii = 0; ii < 2; ii++) {
-      printf("%d\t", calendar[i][ii]);
+  // read input from term
+  printf("Enter date and time (YYYY-MM-DD HH:mm:ss): ");
+  if (fgets(buffer, sizeof(buffer), stdin) != NULL) {
+    // parse input
+    if (parse_datetime(buffer, &year, &month, &day, &hour, &minute, &second) !=
+        6) {
+      printf("Invalid input format. Please use YYYY-MM-DD HH:mm:ss.\n");
+      return 1;
     }
-    printf("\n");
+  } else {
+    printf("Error reading input.\n");
+    return 1;
   }
 
-  if (check_leapyear(year)) {
-    printf("\nLeapyear.\n");
+  // Validate the month, day, time
+  if (!validate_month(month)) {
+    printf("Invalid month.\n");
+    return 1;
+  }
+  if (!validate_day(year, month, day)) {
+    printf("Invalid day for the given month and year.\n");
+    return 1;
+  }
+  if (!validate_time(hour, minute, second)) {
+    printf("Invalid time.\n");
+    return 1;
+  }
+
+  // if all checks pass
+  printf("Valid date and time: %d-%02d-%02d %02d:%02d:%02d\n", year, month, day,
+         hour, minute, second);
+
+  return 0;
+}
+
+// check if the year is a leap year
+int check_leapyear(int year) {
+  if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+    return 1; // Leap
   } else {
-    printf("\nNot leapyear.\n");
+    return 0; // Not leap
+  }
+}
+
+// validate the month
+int validate_month(int month) {
+  if (month >= 1 && month <= 12) {
+    return 1;
   }
   return 0;
 }
 
-int check_leapyear(int year) {
-  if (year % 4 == 0) {
-    return 1;
-  } else {
-    return 0;
+// validate the day based on the month and leap year
+int validate_day(int year, int month, int day) {
+  const int days_in_month[12] = {31, 28, 31, 30, 31, 30,
+                                 31, 31, 30, 31, 30, 31};
+  int max_days = days_in_month[month - 1];
+
+  // fix Feb for leap year
+  if (month == 2 && check_leapyear(year)) {
+    max_days = 29;
   }
-};
+
+  if (day >= 1 && day <= max_days) {
+    return 1;
+  }
+  return 0;
+}
+
+// validate the time
+int validate_time(int hour, int minute, int second) {
+  if (hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59 && second >= 0 &&
+      second <= 59) {
+    return 1;
+  }
+  return 0;
+}
+
+// parse date and time from the input string
+int parse_datetime(const char *input, int *year, int *month, int *day,
+                   int *hour, int *minute, int *second) {
+  return sscanf(input, "%d-%d-%d %d:%d:%d", year, month, day, hour, minute,
+                second);
+}
