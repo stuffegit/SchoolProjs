@@ -1,3 +1,10 @@
+/**
+ * @file main.c
+ * @brief
+ * @author Christoffer Sundström
+ * @date 2024-10-28
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -12,10 +19,9 @@ int main(void) {
   char buffer[20];
   int year, month, day, hour, minute, second;
 
-  // read input from term
   printf("Enter date and time (YYYY-MM-DD HH:mm:ss): ");
+  // read input from term - fgets is op
   if (fgets(buffer, sizeof(buffer), stdin) != NULL) {
-    // parse input
     if (parse_datetime(buffer, &year, &month, &day, &hour, &minute, &second) !=
         6) {
       printf("Invalid input format. Please use YYYY-MM-DD HH:mm:ss.\n");
@@ -64,7 +70,7 @@ int validate_month(int month) {
   return 0;
 }
 
-// validate the day based on the month and leap year
+// validate leap year
 int validate_day(int year, int month, int day) {
   const int days_in_month[12] = {31, 28, 31, 30, 31, 30,
                                  31, 31, 30, 31, 30, 31};
@@ -90,7 +96,8 @@ int validate_time(int hour, int minute, int second) {
   return 0;
 }
 
-// parse date and time from the input string
+// parse date and time from the input string -> returns amount of items
+// soufiens gonna hate this mess
 int parse_datetime(const char *input, int *year, int *month, int *day,
                    int *hour, int *minute, int *second) {
   return sscanf(input, "%d-%d-%d %d:%d:%d", year, month, day, hour, minute,
