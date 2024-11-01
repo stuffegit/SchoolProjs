@@ -14,9 +14,11 @@ int main(void) {
 }
 
 int compare_string(char *str1, char *str2) {
+  int output = 0;
   if (strcmp(str1, str2) == 0) {
-    return 1;
+    output = 1;
   } else {
-    return 0;
+    output = 0;
   }
+  return output;
 }

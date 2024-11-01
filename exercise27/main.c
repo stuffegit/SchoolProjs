@@ -8,28 +8,27 @@ int find_val_in_arr(int x[LEN], int val);
 
 int main(void) {
   int arr[LEN] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-  (void)printf("%d\n", find_lar_in_arr(arr));
-  (void)printf("%d\n", find_avg_in_arr(arr));
-  (void)printf("%d\n", find_val_in_arr(arr, 7));
+  (void)printf("%d\n%d\n%d\n", find_lar_in_arr(arr), find_avg_in_arr(arr),
+               find_val_in_arr(arr, 7));
   return 0;
 }
 
 int find_lar_in_arr(int x[LEN]) {
-  int temp = 0;
+  int output = 0;
   for (int i = 0; i < LEN; i++) {
-    if (x[i] > temp) {
-      temp = x[i];
+    if (x[i] > output) {
+      output = x[i];
     }
   }
-  return temp;
+  return output;
 }
 
 int find_avg_in_arr(int x[LEN]) {
-  int temp = 0;
+  int output = 0;
   for (int i = 0; i < LEN; i++) {
-    temp = temp + x[i];
+    output = output + x[i];
   }
-  return temp / LEN;
+  return output / LEN;
 }
 
 int find_val_in_arr(int x[LEN], int val) {
