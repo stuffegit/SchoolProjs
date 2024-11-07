@@ -4,7 +4,7 @@
 void printprimes(int min, int max);
 
 int main(void) {
-  uint32_t m = 13, n = 51;
+  uint32_t m = 13, n = 19;
   printprimes(m, n);
   return 0;
 }
