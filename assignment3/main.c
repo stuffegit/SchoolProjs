@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author Christoffer Sundström
- * @date 7 November 2024
+ * @date 16 November 2024
  * @brief Checks and validates Swedish personal identity numbers.
  *
  * 1. Prompts the user to enter a Swedish personal identity number.

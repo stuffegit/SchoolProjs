@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author Christoffer Sundström
- * @date 7 November 2024
+ * @date 16 November 2024
  * @brief Encrypt CRC with check value then recheck validity at end.
  *
  * 1. Prompts the user to enter a message.
@@ -10,9 +10,8 @@
  * 4. Generates the CRC value using the calculate_crc function on line 56 with the 0xC599 polynomial.
  * 5. Verifies the CRC value by re-calculating
  *
- * @see https://sv.wikipedia.org/wiki/Personnummer_i_Sverige Reference for algorithm help and logical guidance.
- * @see https://www.datorproblem.org/Personnummergenerator
- * @see https://simplycalc.com/luhn-calculate.php Tools to check program accuracy.
+ * @see https://www.youtube.com/watch?v=izG7qT0EpBw - The main source that thought me CRCs.
+ * @see https://en.wikipedia.org/wiki/Computation_of_cyclic_redundancy_checks - Logic help.
  **/
 #include <stdint.h>
 #include <stdio.h>
@@ -32,13 +31,6 @@ int main() {
   char input[MAX_MESSAGE_LENGTH + 2]; // Input buffer for user message (+2 for newline and null terminator)
   printf("Enter a message (max %d characters): ", MAX_MESSAGE_LENGTH);
   fgets(input, sizeof(input), stdin); // Read input
-  printf("Original message: %s", input);
-  for (int i = 0; i < (sizeof(input) / sizeof(input[0])); i++) {
-    if (*(input + i)) {
-      printf("%08b", *(input + i));
-    }
-  }
-  printf("\n");
 
   size_t length = strcspn(input, "\n"); // Remove the newline character that fgets love adding from stdin
   input[length] = '\0';                 // Null-terminate the string
@@ -47,6 +39,14 @@ int main() {
     printf("Error: Message exceeds maximum length of %d characters.\n", MAX_MESSAGE_LENGTH);
     error = 1;
   } else {
+
+    printf("Original message: %s", input);
+    for (int i = 0; i < (sizeof(input) / sizeof(input[0])); i++) {
+      if (*(input + i)) {
+        printf("%08b", *(input + i));
+      }
+    }
+    printf("\n");
 
     uint8_t message[length]; // Array to hold message as uint8_t
     for (size_t i = 0; i < length; i++) {
