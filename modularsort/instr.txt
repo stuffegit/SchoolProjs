@@ -1,0 +1,7 @@
+1. Create a function to sort an array of integers in ascending order.
+
+2. Create another function to check if the array is sorted.
+
+3. Implement these functions in a modular format using .c, .h, and main.c files.
+
+4. Use assert to test the functions, with at least two test cases for each function.
