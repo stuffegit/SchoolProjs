@@ -2,100 +2,104 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
-typedef struct Node { // each node
-  int value;
-  struct Node* next;
-} Node;
-
-typedef struct { // entire stack
-  Node* top;
+typedef struct {
+  uint8_t* data;
   size_t size;
+  size_t top;
 } Stack;
 
-Stack* stack_create(void);
-void stack_push(Stack* stack, int value);
+Stack* stack_create(size_t size);
+void stack_push(Stack* stack, uint8_t data);
 void stack_pop(Stack* stack);
-int stack_count(const Stack* stack);
-void stack_clear(Stack* stack);
+size_t stack_count(const Stack* stack);
+Stack* stack_clear(Stack* stack);
 void stack_print(const Stack* stack);
 
 int main(void) {
-  Stack* stack = stack_create();
+  Stack* stack = stack_create(10);
 
   stack_print(stack);
-  printf("Items in stack: %d\n", stack_count(stack));
+  printf("Items in stack: %zu\n", stack_count(stack));
 
   stack_push(stack, 3);
   stack_push(stack, 6);
   stack_push(stack, 9);
   stack_print(stack);
-  printf("Items in stack: %d\n", stack_count(stack));
+  printf("Items in stack: %zu\n", stack_count(stack));
 
   stack_pop(stack);
   stack_print(stack);
-  printf("Items in stack: %d\n", stack_count(stack));
+  printf("Items in stack: %zu\n", stack_count(stack));
 
-  stack_clear(stack);
+  stack = stack_clear(stack);
   printf("Stack cleared\n");
   stack_print(stack);
 
   return 0;
 }
 
-Stack* stack_create(void) {
+Stack* stack_create(size_t size) {
   Stack* stack = malloc(sizeof(Stack));
   assert(stack);
-  stack->top = NULL;
-  stack->size = 0;
+
+  stack->data = calloc(size, sizeof(uint8_t)); // calloc sets all to 0
+  assert(stack->data);
+
+  stack->size = size;
+  stack->top = 0;
+
   return stack;
 }
 
-void stack_push(Stack* stack, int value) {
-  assert(stack);
-  Node* new_node = malloc(sizeof(Node));
-  assert(new_node);
-  new_node->value = value;
-  new_node->next = stack->top;
-  stack->top = new_node;
-  stack->size++;
+Stack* stack_clear(Stack* stack) {
+  if (stack) {
+    free(stack->data);
+    free(stack);
+    stack = NULL;
+  }
+  return stack;
+}
+
+void stack_print(const Stack* stack) {
+  if (stack != NULL && stack->data != NULL) {
+
+    for (size_t i = 0; i < stack->size; i++) {
+      printf("%d ", stack->data[i]);
+    }
+    printf("\n");
+  } else {
+    printf("No stack or stack data.\n");
+  }
+}
+
+void stack_push(Stack* stack, uint8_t value) {
+  assert(stack && stack->data);
+
+  if (stack->top < stack->size) {
+    stack->data[stack->top++] = value;
+  } else {
+    printf("Stack overflow\n");
+  }
 }
 
 void stack_pop(Stack* stack) {
-  assert(stack);
-  if (stack->top) {
-    Node* temp = stack->top;
-    stack->top = stack->top->next;
-    free(temp);
-    stack->size--;
+  assert(stack && stack->data);
+
+  if (stack->top > 0) {
+    stack->top -= 1;
+    stack->data[stack->top] = 0;
   } else {
     printf("Stack underflow\n");
   }
 }
 
-int stack_count(const Stack* stack) {
+size_t stack_count(const Stack* stack) {
+  assert(stack);
+  return stack->top;
+}
+
+size_t stack_getlen(const Stack* stack) {
   assert(stack);
   return stack->size;
-}
-
-void stack_clear(Stack* stack) {
-  assert(stack);
-  while (stack->top) {
-    stack_pop(stack);
-  }
-}
-
-void stack_print(const Stack* stack) {
-  assert(stack);
-  Node* current = stack->top;
-  if (!current) {
-    printf("Stack is empty\n");
-    return;
-  }
-  while (current) {
-    printf("%d ", current->value);
-    current = current->next;
-  }
-  printf("\n");
 }

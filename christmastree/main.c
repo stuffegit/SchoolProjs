@@ -5,7 +5,7 @@ int main(void) {
   printf("Enter rows: ");
   scanf("%d", &rows);
   int align = rows;
-  for (int i = -1; i < rows * 2; i= i + 2) {
+  for (int i = -1; i < rows * 2; i += 2) {
     for (int ii = 0; ii < align; ++ii) {
       printf(" ");
     }
@@ -15,15 +15,15 @@ int main(void) {
     printf("\n");
     align--;
   }
-  for (int i = 0; i < rows-1; ++i) {
+  for (int i = 0; i < rows - 1; ++i) {
     printf(" ");
   }
   printf("*\n");
-  for (int i = 0; i < rows-1; ++i) {
+  for (int i = 0; i < rows - 1; ++i) {
     printf(" ");
   }
   printf("*\n");
-  for (int i = 0; i < rows-1; ++i) {
+  for (int i = 0; i < rows - 1; ++i) {
     printf(" ");
   }
   printf("*\n");
