@@ -18,24 +18,19 @@ void stack_print(const Stack* stack);
 
 int main(void) {
   Stack* stack = stack_create(10);
-
   stack_print(stack);
   printf("Items in stack: %zu\n", stack_count(stack));
-
   stack_push(stack, 3);
   stack_push(stack, 6);
   stack_push(stack, 9);
   stack_print(stack);
   printf("Items in stack: %zu\n", stack_count(stack));
-
   stack_pop(stack);
   stack_print(stack);
   printf("Items in stack: %zu\n", stack_count(stack));
-
   stack = stack_clear(stack);
   printf("Stack cleared\n");
   stack_print(stack);
-
   return 0;
 }
 
