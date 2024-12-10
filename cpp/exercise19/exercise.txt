@@ -1,0 +1,14 @@
+Develop and test a multiple-instance linked list module to strore and restore data of type int according the following requirements.
+
+    The data stored in a linked list shall be unique and sorted.
+    The module shall provide the following functions:
+        A create function to create an instance of the list.
+        An insert function to insert an integer in a list.
+        An available function to return the number of data elements stored in a list.
+        A search function to check if an integer exists in a list or not
+        A remove function to delete an integer from a list
+        An edit function to change the data stored in a node of a list.
+            Note that the data stored in a list shall always be unique and sorted.
+        A destroy function to release memory allocated for a list.
+    Test the module using assertions.
+

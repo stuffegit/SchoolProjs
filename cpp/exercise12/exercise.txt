@@ -1,0 +1,2 @@
+Make a program to read date and time from a terminal and then
+check if the entered date and time is in the format of YYYY-MM-DD HH:mm:ss or not.

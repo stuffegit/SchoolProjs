@@ -1,0 +1,9 @@
+Make a program to read a std::string from a terminal and then convert
+
+the uppercase letters to lowercase and vice versa and
+
+in the end print the string to the standard output.
+
+ 
+
+To change and print the string use only pointers.
