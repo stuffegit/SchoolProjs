@@ -1,0 +1,10 @@
+Implement and test a stack class using an array of type int whose
+size is a compile-time constant. 
+The class shall provide the following function:
+
+(x)A function to push a data element to a stack.
+(x)A function to get number of the data elements stored in a stack.
+(x)A function to pop an element from a stack.
+(x)A function to check if a stack is full or not.
+(x)A function to check if a stack is empty or not
+(x)A function to clear a stack

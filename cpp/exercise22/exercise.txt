@@ -1,0 +1,9 @@
+Implement and test an uncopyable singleton stack class using
+an array of type int whose size is a compile-time constant.
+The singleton class shall provide the following function:
+
+A function to push a data element to the stack.
+A function to get number of the data elements stored in the stack.
+A function to pop an element from the stack.
+A function to clear the stack
+

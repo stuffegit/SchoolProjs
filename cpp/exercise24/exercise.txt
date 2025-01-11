@@ -1,0 +1,20 @@
+
+
+Implement and test a stack class using a linked list
+to store and restore data of type int.
+
+Test the class using assertions and ensure that all
+the allocated memory blocks are released.
+
+The class shall provide the following function:
+
+A function to push a data element to a stack.
+
+A function to get number of the data elements stored
+in a stack.
+
+A function to pop an element from a stack.
+
+A function to clear a stack
+
+Overload the insertion operator to print a stack to terminal

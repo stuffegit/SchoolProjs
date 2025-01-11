@@ -1,0 +1,18 @@
+A circle is a shape which has a center point and a radius.
+A square is a shape which has a length(four equal sides).
+
+Every shape has a name and an area. 
+Every point has x and y on the 2d cartesian coordinate system.
+
+Make a Shape class and a Point class.
+
+Make a Circle class based on Shape.
+  The class shall have a function to get area of a circle.
+
+  It shall be possible to check if two circles 
+  are equal or not by overloading the == operator.
+
+Make a Square class based on Shape. 
+The class shall have a function to get area of a square.
+
+Make a function to print area of any shape.
