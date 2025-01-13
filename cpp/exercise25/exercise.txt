@@ -1,0 +1,8 @@
+Make an uncopyable queue class using a linked list to store
+and restore data of type int and to provide the following functions:
+(x)A function to enqueue a data element to a queue.
+(x)A function to dequeue a data element from a queue.
+(x)A function to get the number of data elements stored in a queue.
+(x)A function to clear a queue.
+(x)Test the class using assertions and ensure that all the allocated
+memory blocks are released.
