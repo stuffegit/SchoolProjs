@@ -1,0 +1,8 @@
+Make a template print function to print an array.
+
+Make a template function pointer type to point to
+the print function
+
+Call the print function using an instance of the
+function pointer type to print an example array
+of type int.
