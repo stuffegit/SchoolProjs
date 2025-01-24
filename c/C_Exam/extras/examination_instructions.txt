@@ -1,0 +1,29 @@
+Create a C application that allows users to create, print, and update student records.
+The application should have a menu-driven interface.
+
+The application should store student records in a binary file.
+
+Each student record should have the following fields:
+ID Number (an integer greater than 0)
+Name (string which is max. 32 characters)
+Age (integer)
+
+The application should have a menu with the following options:
+C) Create A student
+P) Print All Students
+U) Update A student
+E) Exit
+
+If you want to get g(godkänt) you shall do the following:
+The application should validate user input for each field. 
+The application should handle errors when reading or writing from/to the file.
+The code should not contain magic numbers.
+
+If you want to get vg(väl godkänt) you shall do the following:
+The user should have a menu option ( D) Delete A Student ) to delete a student from store
+student records using their ID number.
+The code should be c ommented and the module shall be well destroyed.
+The code should be modularized into separate header and source files.
+
+Please make sure your code is well-organized, readable, and follow the guidelines. provided.
+Please submit the code in a single zip file.
