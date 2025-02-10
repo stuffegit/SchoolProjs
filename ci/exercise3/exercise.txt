@@ -1,27 +1,25 @@
 Using TDD and googletest develop and test a greeting function according to the following requirements.
     The function prototype shall be: std::string greet(const std::string &name);
-        The function shall handle nulls.
-            If name is an empty string, then the method shall return the string "Hello, my friend."
-        The function shall interpolate the name in a simple greeting. For example:
-            If name is "Bob", the method shall return a string "Hello, Bob.".
-        The function shall handle shouting. If name is all uppercase, then it should shout back to the 
-        user. For examples:
-            If name is "JERRY", the method shall return the string "HELLO JERRY!"
-        The function shall handle two names. If name is a string of two names, then both names should 
-        be printed. For examples:
-            If name is "Jill, Jane", the method shall return the string "Hello, Jill and Jane."
-            If name is "BOB, JANE", the method shall return the string "HELLO BOB AND JANE!"
-        The function shall handle an arbitrary number of names.  If name represents more than two names,
+        [X]The function shall handle nulls.
+            [x]If name is an empty string, then the method shall return the string "Hello, my friend."
+        [x]The function shall interpolate the name in a simple greeting. For example:
+            [x]If name is "Bob", the method shall return a string "Hello, Bob.".
+        [x]The function shall handle shouting. If name is all uppercase, then it should shout back to the 
+                user. For examples:
+            [x]If name is "JERRY", the method shall return the string "HELLO JERRY!"
+        [x]The function shall handle two names. If name is a string of two names, then both names should 
+                be printed. For examples:
+                [x]If name is "Jill, Jane", the method shall return the string "Hello, Jill and Jane."
+                [x]If name is "BOB, JANE", the method shall return the string "HELLO BOB AND JANE!"
+        [x]The function shall handle an arbitrary number of names.  If name represents more than two names,
         separate them with commas and close with an Oxford comma and "and". For examples:
-            If name is "Amy, Brian, Charlotte", the method shall return the string "Hello, Amy, Brian, 
-            and Charlotte."
-            If name is "BRIAN, BOB, JANE", the method shall return the string "HELLO BRIAN, BOB, AND JANE!"
-        The function shall allow mixing of normal and shouted names by separating the response into two 
+            [x]If name is "Amy, Brian, Charlotte", the method shall return the string "Hello, Amy, Brian, 
+                and Charlotte."
+            [x]If name is "BRIAN, BOB, JANE", the method shall return the string "HELLO BRIAN, BOB, AND JANE!"
+        [ ]The function shall allow mixing of normal and shouted names by separating the response into two 
         greetings. For examples:
-            If name is "Amy, BRIAN, Charlotte", the method shall return the string "Hello, Amy and Charlotte.
-            AND HELLO BRIAN!"
-            If name is "Amy, BRIAN, Charlotte, BOB, Jill, JANE", the method shall return the string 
-            "Hello, Amy, Charlotte, and Jill. AND HELLO BRIAN, BOB, AND JANE!"
-    To build and run the test, use a cmake file.
-
-
+            [ ]If name is "Amy, BRIAN, Charlotte", the method shall return the string "Hello, Amy and Charlotte.
+                AND HELLO BRIAN!"
+            [ ]If name is "Amy, BRIAN, Charlotte, BOB, Jill, JANE", the method shall return the string 
+                "Hello, Amy, Charlotte, and Jill. AND HELLO BRIAN, BOB, AND JANE!"
+        [ ]To build and run the test, use a cmake file.

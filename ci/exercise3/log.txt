@@ -1,0 +1,67 @@
+[H[2J[3J----------Running cmake...
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/stuffe/Projects/SchoolProjs/ci/exercise3/build
+----------Running make...
+[100%] Built target greet_test
+----------Running test program...
+Running main() from /home/stuffe/.cache/yay/googletest-git/src/googletest/googletest/src/gtest_main.cc
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from GreetTests
+[ RUN      ] GreetTests.TestNormalOutput
+[       OK ] GreetTests.TestNormalOutput (0 ms)
+[ RUN      ] GreetTests.TestCapsOutput
+[       OK ] GreetTests.TestCapsOutput (0 ms)
+[ RUN      ] GreetTests.TestTwoNameOutput
+[       OK ] GreetTests.TestTwoNameOutput (0 ms)
+[ RUN      ] GreetTests.TestTwoCapsNameOutput
+/home/stuffe/Projects/SchoolProjs/ci/exercise3/test.cpp:18: Failure
+Expected equality of these values:
+  greet(testname)
+    Which is: "HELLO A and B!"
+  "HELLO A AND B!"
+Two caps name output test failed.
+
+[  FAILED  ] GreetTests.TestTwoCapsNameOutput (0 ms)
+[ RUN      ] GreetTests.TestFiveNameOutput
+[       OK ] GreetTests.TestFiveNameOutput (0 ms)
+[ RUN      ] GreetTests.TestFiveCapsNameOutput
+/home/stuffe/Projects/SchoolProjs/ci/exercise3/test.cpp:26: Failure
+Expected equality of these values:
+  greet(testname)
+    Which is: "HELLO A, B, C, D, and E!"
+  "HELLO A, B, C, D, AND E!"
+Five caps name output test failed.
+
+[  FAILED  ] GreetTests.TestFiveCapsNameOutput (0 ms)
+[ RUN      ] GreetTests.TestTwoMixedNameOutput
+/home/stuffe/Projects/SchoolProjs/ci/exercise3/test.cpp:30: Failure
+Expected equality of these values:
+  greet(testname)
+    Which is: "Hello, b. AND HELLO A!"
+  "Hello b. AND HELLO A!"
+Two Mixed name output test failed.
+
+[  FAILED  ] GreetTests.TestTwoMixedNameOutput (0 ms)
+[ RUN      ] GreetTests.TestSixMixedNameOutput
+/home/stuffe/Projects/SchoolProjs/ci/exercise3/test.cpp:34: Failure
+Expected equality of these values:
+  greet(testname)
+    Which is: "Hello, b, d, and f. AND HELLO A, C, and E!"
+  "Hello, b, d, and f. AND HELLO A, C, AND E!"
+Five Mixed name output test failed.
+
+[  FAILED  ] GreetTests.TestSixMixedNameOutput (0 ms)
+[----------] 8 tests from GreetTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 4 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] GreetTests.TestTwoCapsNameOutput
+[  FAILED  ] GreetTests.TestFiveCapsNameOutput
+[  FAILED  ] GreetTests.TestTwoMixedNameOutput
+[  FAILED  ] GreetTests.TestSixMixedNameOutput
+
+ 4 FAILED TESTS
