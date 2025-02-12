@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/greet_test.dir/greet.cpp.o CMakeFiles/greet_test.dir/test.cpp.o -o greet_test  -lgtest -lgtest_main 
