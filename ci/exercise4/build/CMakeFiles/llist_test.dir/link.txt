@@ -1,0 +1,1 @@
+/usr/sbin/c++ CMakeFiles/llist_test.dir/llist.cpp.o CMakeFiles/llist_test.dir/test.cpp.o -o llist_test  -lgtest -lgtest_main
