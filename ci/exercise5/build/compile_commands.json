@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/stuffe/Projects/schoolprojs/ci/exercise5/build",
+  "command": "/usr/bin/g++ -g -Wall -Wextra -Wpedantic -std=c++14 -o CMakeFiles/queue_test.dir/queue.cpp.o -c /home/stuffe/Projects/schoolprojs/ci/exercise5/queue.cpp",
+  "file": "/home/stuffe/Projects/schoolprojs/ci/exercise5/queue.cpp"
+},
+{
+  "directory": "/home/stuffe/Projects/schoolprojs/ci/exercise5/build",
+  "command": "/usr/bin/g++ -g -Wall -Wextra -Wpedantic -std=c++14 -o CMakeFiles/queue_test.dir/test.cpp.o -c /home/stuffe/Projects/schoolprojs/ci/exercise5/test.cpp",
+  "file": "/home/stuffe/Projects/schoolprojs/ci/exercise5/test.cpp"
+}
+]

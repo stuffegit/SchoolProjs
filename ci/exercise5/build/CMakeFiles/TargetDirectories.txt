@@ -1,4 +1,4 @@
-/home/stuffe/Projects/schoolprojs/ci/exercise3/build/CMakeFiles/greet_test.dir
-/home/stuffe/Projects/schoolprojs/ci/exercise3/build/CMakeFiles/test.dir
-/home/stuffe/Projects/schoolprojs/ci/exercise3/build/CMakeFiles/edit_cache.dir
-/home/stuffe/Projects/schoolprojs/ci/exercise3/build/CMakeFiles/rebuild_cache.dir
+/home/stuffe/Projects/schoolprojs/ci/exercise5/build/CMakeFiles/queue_test.dir
+/home/stuffe/Projects/schoolprojs/ci/exercise5/build/CMakeFiles/test.dir
+/home/stuffe/Projects/schoolprojs/ci/exercise5/build/CMakeFiles/edit_cache.dir
+/home/stuffe/Projects/schoolprojs/ci/exercise5/build/CMakeFiles/rebuild_cache.dir
