@@ -1,0 +1,16 @@
+Using TDD and googletest develop and test a template queue class implemented using  a linked list according the following requirements.
+[x]The class shall be uncopayable and moveable.
+[x]To build and run the test, use a cmake file.
+Ensure that the dynamically allocated memory blocks are released
+The class shall provide the following functions:
+[x]An enqueue function to enqueue a data element to a queue.
+[x]A size function to return the number of data elements stored in a queue.
+[x]A dequeue function to dequeue a data element from the queue
+[x]A clear function to clear a queue.
+[ ]The class shall be tested with types: int, float and std::string
+Don’t use std::exit or assert in the class.
+
+Creating a workflow which is triggered on
+[ ]Push to any branch to build and run the test
+[ ]Pull request to the main branch to build and run the test
+[ ]Creating a status badge in README.md

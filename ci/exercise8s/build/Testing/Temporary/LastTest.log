@@ -1,0 +1,21 @@
+Start testing: Feb 12 12:47 CET
+----------------------------------------------------------
+1/1 Testing: queue_test
+1/1 Test: queue_test
+Command: "/home/stuffe/Projects/schoolprojs/ci/exercise8/build/queue_test"
+Directory: /home/stuffe/Projects/schoolprojs/ci/exercise8/build
+"queue_test" start time: Feb 12 12:47 CET
+Output:
+----------------------------------------------------------
+[==========] Running 0 tests from 0 test suites.
+[==========] 0 tests from 0 test suites ran. (0 ms total)
+[  PASSED  ] 0 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"queue_test" end time: Feb 12 12:47 CET
+"queue_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 12 12:47 CET
