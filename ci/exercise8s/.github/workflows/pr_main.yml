@@ -1,0 +1,22 @@
+name: exercise8 - push non-main
+on:
+  pull_request:
+    branches: 
+      - 'main'
+jobs:
+  check_and_make_release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4
+    - name: install deps
+      run: |
+            sudo apt install build-essentials zip cmake 
+            git clone https://github.com/google/googletest
+            cd googletest && mkdir build
+            cd build && cmake .. && make
+            sudo make install
+    - name: build and run program
+      run: cd build && cmake .. && make && make queue_test
+    - name: zip and release
+      run: zip program.zip build 
