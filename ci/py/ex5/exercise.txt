@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 Make a program to display the signals in a table like the image. The solution shall handle changing signals and If we change the signal properties, the table columns shall be resized automatically. 
 
@@ -36,3 +37,8 @@ message = {
 }
 
 
+=======
+Make a program to display the signals in a table like the image.
+The solution shall handle changing signals and If we change the 
+signal properties, the table columns shall be resized automatically. 
+>>>>>>> c410768 (13m)

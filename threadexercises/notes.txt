@@ -1,0 +1,25 @@
+- defered lock example?
+
+- where should we create mutex? global/udt/main?
+
+- scoped cv.wait + operation is good practice?
+
+- cv.notify_one/all performance diff? examples of
+  use?
+
+- cv.wait(x,y); emulates this:
+mtx.lock();
+while (condition){
+  mtx.unlock();
+  std::this_thread::yield();
+  mtx.lock();
+}
+mtx.unlock();
+std::this_thread::yield();
+
+- a var can be register, can it be in cpu cache
+  too?
+
+- compiler might make a var a register var if
+  it optimizes (-o1), then threads cant access.
+  Make shared vars volatile.
